@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
 		   savedText[y][t] = j;
 		   t++;
 		   if(j == '\n') {
+			   savedText[y][t] = '\0';
 			   line++;
 			   y++;
 			   t = 0;
@@ -34,7 +35,7 @@ int main(int argc, char *argv[])
    printf("You can choose 1 ~ %d Line\n", line);
    printf("Pls 'Enter' the line to select : ");
    scanf("%d", &bb);
-   if(bb == NULL){
+   if(bb != NULL){
 	   bb = bb - 1;
 	   printf("%s", savedText[bb]); 
    }
