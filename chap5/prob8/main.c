@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
    char savedText[10][100];
    int line, j, y, t = 0;
    int bb = 0;
+   char dd[3];
 
    fd = open(argv[1], O_RDONLY);
 
@@ -34,10 +35,16 @@ int main(int argc, char *argv[])
    printf("Total Line : %d\n", line);
    printf("You can choose 1 ~ %d Line\n", line);
    printf("Pls 'Enter' the line to select : ");
-   scanf("%d", &bb);
-   if(bb != NULL){
+
+   if(scanf("%d", &bb)) {
 	   bb = bb - 1;
 	   printf("%s", savedText[bb]); 
+   }
+   else{
+	   printf("%s", savedText[0]);
+	   printf("%s", savedText[1]);
+	   printf("%s", savedText[2]);
+	   printf("%s", savedText[3]);
    }
    exit(0);
 }
